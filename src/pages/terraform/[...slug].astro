@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("terraform");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+  </head><h1>{entry.data.title}</h1>
+  <Content />
+
+
+</html>

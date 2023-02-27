@@ -1,0 +1,5 @@
+{
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/deployphp/deployer/master/src/schema.json": "file:///Users/bianca/projects/astro-blog/.github/workflows/deploy.yaml"
+  }
+}

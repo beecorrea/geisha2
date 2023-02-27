@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+// Get all entries from a collection. Requires the name of the collection as an argument.
+const blogEntries = await getCollection("terraform");
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <ul>
+    {
+      blogEntries.map((blogPostEntry) => (
+        <li>
+          <a href={`/${blogPostEntry.collection}/${blogPostEntry.slug}`}>
+            {blogPostEntry.data.title}
+          </a>
+          <time datetime={blogPostEntry.data.publishedDate.toISOString()}>
+            {blogPostEntry.data.publishedDate.toDateString()}
+          </time>
+        </li>
+      ))
+    }
+  </ul>
+
+
+</html>

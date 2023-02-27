@@ -1,0 +1,20 @@
+{
+	"name": "astro-blog",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/mdx": "^0.17.2",
+		"@astrojs/preact": "^2.0.3",
+		"astro": "^2.0.13",
+		"preact": "^10.6.5",
+		"rehype-accessible-emojis": "^0.3.2",
+		"remark-toc": "^8.0.1"
+	}
+}
